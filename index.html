@@ -14,13 +14,14 @@
             color: #fff;
             font-family: Arial, sans-serif;
             text-align: center;
-            overflow: hidden; /* Evitar el scroll */
+            overflow: hidden; /* Evitar scroll */
         }
         h1 {
             color: #00aaff;
             text-transform: uppercase;
             font-size: 3rem;
             margin: 20px 0;
+            animation: fadeIn 2s ease;
         }
         p {
             color: #cccccc;
@@ -28,7 +29,54 @@
             margin-bottom: 40px;
         }
         .container {
-            display: none; /* Ocultar el contenido inicialmente */
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            display: none; /* Ocultar contenido inicialmente */
+        }
+        .btn {
+            background-color: #00aaff;
+            color: #fff;
+            padding: 15px 30px;
+            margin: 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn img {
+            vertical-align: middle;
+            width: 25px;
+            height: 25px;
+            margin-right: 10px;
+        }
+        .btn:hover {
+            background-color: #0077cc;
+        }
+        .image {
+            width: 300px;
+            height: auto;
+            border-radius: 15px;
+            margin: 20px 0;
+            animation: fadeInUp 2s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         .hcaptcha-container {
             position: fixed;
@@ -40,12 +88,11 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background-color: rgba(0, 0, 0, 0.9); /* Fondo semi-transparente */
-            z-index: 1000; /* Asegurarse de que esté sobre otros elementos */
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
         }
     </style>
 
-    <!-- Cargar hCaptcha -->
     <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
 </head>
 <body>
@@ -61,19 +108,37 @@
         <p>Explora nuestros contenidos y únete a nuestra comunidad.</p>
         <img src="https://tinyurl.com/23s36pbo" alt="Imagen del Canal" class="image">
         
-        <a href="https://chat.whatsapp.com/CPGKvG1sV3v4wOwF6c1UiD" class="btn">Grupo de WhatsApp</a>
-        <a href="https://whatsapp.com/channel/0029VadxAUkKLaHjPfS1vP36" class="btn">Canal de WhatsApp</a>
-        <a href="https://github.com/Eliasar54/ansi-BOT-MD" class="btn">Repositorio GitHub</a>
-        <a href="https://store.azuraultra-host.pro/login" class="btn">Azura Ultra</a>
-        <a href="https://wa.me/50582340051" class="btn">Contacto WhatsApp</a>
-        <a href="mailto:eliasarmoncada4@gmail.com" class="btn">Contacto por Gmail</a>
+        <a href="https://chat.whatsapp.com/CPGKvG1sV3v4wOwF6c1UiD" class="btn">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+            Grupo de WhatsApp
+        </a>
+        <a href="https://whatsapp.com/channel/0029VadxAUkKLaHjPfS1vP36" class="btn">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+            Canal de WhatsApp
+        </a>
+        <a href="https://github.com/Eliasar54/ansi-BOT-MD" class="btn">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub">
+            Repositorio GitHub
+        </a>
+        <a href="https://store.azuraultra-host.pro/login" class="btn">
+            <img src="https://qu.ax/ewVT.jpg" alt="Azura Ultra">
+            Azura Ultra
+        </a>
+        <a href="https://wa.me/50582340051" class="btn">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+            Contacto WhatsApp
+        </a>
+        <a href="mailto:eliasarmoncada4@gmail.com" class="btn">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png" alt="Gmail">
+            Contacto por Gmail
+        </a>
     </div>
 
     <script>
         function onCaptchaSuccess() {
             document.getElementById('hcaptcha-container').style.display = 'none';
-            document.getElementById('content').style.display = 'block';
-            document.body.style.overflow = 'auto'; // Restaurar el scroll
+            document.getElementById('content').style.display = 'flex';
+            document.body.style.overflow = 'auto'; // Restaurar scroll
         }
     </script>
 </body>
