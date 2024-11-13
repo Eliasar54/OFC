@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ELIASAR YT - Verificación de Seguridad</title>
+    <link rel="icon" type="image/png" href="https://github.com/Eliasar54.png">
+    <script src="https://hcaptcha.com/1/api.js" async defer></script>
+    <style>
+        body, html {
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow-x: hidden;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: url('https://i.ibb.co/pXhqx3F/56d8ce9d0f8ef6c79ca50bd60c1603da.jpg');
+        }
+
+        @media (min-width: 768px) {
+            body {
+                background-image: url('https://i.ibb.co/fkxk4KY/216a27340bd28f1e936f5e0daba84382.jpg');
+            }
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.75);
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            text-align: center;
+            color: white;
+            z-index: 2;
+        }
+
+        .image {
+            width: 100px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            color: #ccc;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="hcaptcha-container" class="overlay">
+        <div class="container">
+            <h2>Por favor, verifica que no eres un robot:</h2>
+            <img src="https://github.com/Eliasar54.png" alt="Imagen de ELIASAR" class="image">
+            <div class="h-captcha" data-sitekey="a0ee54a8-8ffc-4b66-90c6-722c09227f18" data-callback="hcaptchaCallback"></div>
+        </div>
+    </div>
+
+    <footer>©EliasarYT</footer>
+
+    <script>
+        function hcaptchaCallback() {
+            window.location.href = "https://eliasar-yt-api.vercel.app/";
+        }
+    </script>
+
+</body>
+</html>
