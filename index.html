@@ -3,163 +3,290 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ELIASAR YT - Página Oficial</title>
-    <link rel="icon" type="image/png" href="https://github.com/Eliasar54.png">
-    <link href="https://fonts.googleapis.com/css?family=Raleway|Ubuntu|Lato" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Eliasar YT</title>
+      <link rel="icon" href="https://github.com/Eliasar54.png" type="image/png">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link href="https://eliasar-yt-api.vercel.app/api/styles" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        body, html {
-            font-family: 'Lato', sans-serif;
+        body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            height: 100%;
-            width: 100%;
-            overflow-x: hidden;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-image: url('https://i.ibb.co/pXhqx3F/56d8ce9d0f8ef6c79ca50bd60c1603da.jpg');
-        }
-
-        @media (min-width: 768px) {
-            body {
-                background-image: url('https://i.ibb.co/fkxk4KY/216a27340bd28f1e936f5e0daba84382.jpg');
-            }
-        }
-
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.75);
-            z-index: 1;
-        }
-
-        .container {
-            position: relative;
+            background-color: #121212;
+            color: #e0e0e0;
             text-align: center;
-            padding: 30px;
-            border-radius: 15px;
-            max-width: 600px;
-            width: 90%;
+            user-select: none;
+        }
+        .dashboard {
+            padding: 20px;
+        }
+        .info-box {
+            background-color: #1c1c1c;
+            border-radius: 8px;
+            padding: 20px;
             color: white;
-            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
-            margin: 20px auto;
-            z-index: 2;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-
-        h1 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-
-        p {
-            margin-bottom: 20px;
-        }
-
-        .btn {
-            display: block;
-            padding: 10px 20px;
-            margin: 10px auto;
-            background-color: #1A237E;
-            color: white;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 16px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            width: 90%;
-            max-width: 350px;
-            box-sizing: border-box;
-        }
-
-        .btn img {
-            vertical-align: middle;
-            width: 20px;
-            height: 20px;
-            margin-right: 10px;
-        }
-
-        .btn:hover {
-            background-color: #0D47A1;
+        .info-box:hover {
             transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
-
-        .image {
-            max-width: 100%;
+        .info-box img {
+            width: 60%;
             height: auto;
+            margin-bottom: 15px;
+        }
+        .info-box h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        .welcome-section {
+            background: linear-gradient(45deg, #6b3fa0, #4e9ce0);
+            padding: 30px;
             border-radius: 10px;
+            color: white;
+            text-align: center;
             margin-bottom: 20px;
+            animation: fadeIn 2s ease;
         }
-
-        @media (min-width: 768px) {
-            h1 {
-                font-size: 2.5rem;
+        .welcome-section h2 {
+            margin: 0;
+            font-size: 2em;
+        }
+        .info-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        header {
+            background-color: #1f1f1f;
+            color: #bb86fc;
+            padding: 20px 0;
+            text-shadow: 0 0 10px #bb86fc, 0 0 20px #bb86fc;
+        }
+        header h1 {
+            margin: 0;
+            animation: neonText 1.5s ease-in-out infinite alternate;
+        }
+        @keyframes neonText {
+            0% {
+                text-shadow: 0 0 5px #bb86fc, 0 0 10px #bb86fc, 0 0 15px #bb86fc, 0 0 20px #6200ea;
             }
-            .btn {
-                font-size: 18px;
+            100% {
+                text-shadow: 0 0 10px #bb86fc, 0 0 20px #bb86fc, 0 0 30px #bb86fc, 0 0 40px #6200ea;
             }
         }
-
+        main {
+            padding: 20px;
+        }
+        h3, h2 {
+            margin: 10px 0;
+            animation: fadeIn 2s ease-out;
+        }
+        a {
+            color: #bb86fc;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
         footer {
             margin-top: 20px;
-            font-size: 14px;
-            color: #ccc;
+            background-color: #1f1f1f;
+            color: #bb86fc;
+            padding: 10px 0;
+        }
+        .button {
+            background-color: #6200ea;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #3700b3;
+        }
+        .whatsapp-button {
+            background-color: #25d366;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-size: 1.2em;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, width 0.3s ease;
+            width: 150px;
+        }
+        .whatsapp-button:hover {
+            background-color: #128C7E;
+            width: 160px;
+        }
+        .image-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            animation: fadeIn 2s ease-out;
+        }
+        .image-container img {
+            border-radius: 10px;
+            width: 150px;
+            height: 150px;
+            box-shadow: 0 0 15px #6200ea;
+        }
+        .emoji {
+            font-size: 2em;
+        }
+        .new-update {
+            background-color: #4e9ce0;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            animation: slideUpDown 2s ease-out forwards;
+        }
+        .new-update i {
+            font-size: 25px;
+            margin-right: 10px;
+        }
+        .new-update span {
+            font-size: 16px;
+            color: white;
+            flex-grow: 1;
+        }
+        .new-update button {
+            background-color: #1c1c1c;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 15px;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+        .new-update button:hover {
+            background-color: #444;
+        }
+
+        @keyframes slideUpDown {
+            0% {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+            .welcome-section h2 {
+                font-size: 1.8em;
+            }
+            .info-box h3 {
+                font-size: 1.2em;
+            }
+            .image-container img {
+                width: 120px;
+                height: 120px;
+            }
+            .button {
+                font-size: 1em;
+                padding: 8px 15px;
+            }
+            .whatsapp-button {
+                width: 120px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .welcome-section h2 {
+                font-size: 1.5em;
+            }
+            .info-box img {
+                width: 80%;
+            }
         }
     </style>
-    <script src="https://hcaptcha.com/1/api.js" async defer></script>
 </head>
 <body>
-
-    <div id="hcaptcha-container" class="overlay">
-        <div class="container" style="text-align: center;">
-            <h2>Por favor, verifica que no eres un robot:</h2>
-            <img src="https://github.com/Eliasar54.png" alt="Imagen de ELIASAR" class="image" style="width: 100px; height: auto; margin: 10px 0;">
-            <div class="h-captcha" data-sitekey="a0ee54a8-8ffc-4b66-90c6-722c09227f18" data-callback="hcaptchaCallback"></div>
+    <header>
+        <h1>EliasarYT</h1>
+    </header>
+    <main class="dashboard">
+        <div class="welcome-section">
+            <h2>🌟 ¡Bienvenido a mi web! 🚀</h2>
+            <p>👨‍💻 Descubre mis proyectos y habilidades en desarrollo web. ¡Conectemos y crezcamos juntos! 💡</p>
         </div>
+        <h3>Hola soy un desarrollador y creador de contenido 👨‍💻✨</h3>
+        <h3>Estoy empezando pero esto de la programación me encanta 💻💡</h3>
+        <h2>Tengo la edad de 15 años 🎂</h2>
+        <h2>Mi idioma de programación preferido es JavaScript ⚡</h2>
+        <h3>Actualmente tengo proyectos que he hecho, editados y desde 0 🎨🚀</h3>
+        <h1>Puedes verlos desde mi <a href="https://github.com/Eliasar54" target="_blank">GitHub</a> 👨‍💻🔗</h1>
+<div class="cards">
+  <div class="card usage" style="background: linear-gradient(to right, #f06, #800080);" onclick="window.location.href='https://github.com/ansibot/ansibot';">
+    <div>
+      <div class="title">Visita el repositorio de Ansibot</div>
     </div>
+    <div class="icon"><i class="fas fa-code-branch"></i></div>
+  </div>
+</div>
+        <p align="center">
+            <img src="http://readme-typing-svg.herokuapp.com?font=mono&size=14&duration=3000&color=00FFFF&center=true&vCenter=true&lines=Espero+tu+apoyo" height="40px">
+        </p>
+        <div class="info-section">
+            <div class="info-box">
+                <img src="https://github.com/Eliasar54.png" alt="Contacto 1" onclick="window.location.href='https://wa.me/50582340051'">
+                <h3>EliasarYT</h3>
+                <p>Escríbenos para obtener ayuda personalizada.</p>
+                <button class="whatsapp-button" onclick="window.location.href='https://wa.me/1234567890'">WhatsApp</button>
+            </div>
+        </div>
 
-    <div id="content" style="display: none;">
-        <h1>Bienvenido al Canal de ELIASAR YT</h1>
-        <p>Explora nuestros contenidos y únete a nuestra comunidad.</p>
-        <img src="https://tinyurl.com/23s36pbo" alt="Imagen del Canal" class="image">
-        
-        <a href="https://chat.whatsapp.com/CPGKvG1sV3v4wOwF6c1UiD" class="btn">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-            Grupo de WhatsApp
-        </a>
-        <a href="https://whatsapp.com/channel/0029VadxAUkKLaHjPfS1vP36" class="btn">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-            Canal de WhatsApp
-        </a>
-        <a href="https://github.com/Eliasar54/ansi-BOT-MD" class="btn">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub">
-            Repositorio GitHub
-        </a>
-        <a href="https://dash.skyultraplus.com" class="btn">
-            <img src="https://dash.skyultraplus.com/storage/icon.png" alt="skyultraplus">
-            skyultraplus
-        </a>
-        <a href="https://wa.me/50582340051" class="btn">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-            Contacto WhatsApp
-        </a>
-        <a href="mailto:eliasarmoncada4@gmail.com" class="btn">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png" alt="Gmail">
-            Contacto por Gmail
-        </a>
+        <div class="new-update">
+            <i class="fas fa-exclamation-circle"></i>
+            <span>🌐 API Gratuita 🚀 - Descubre cómo integrar nuestras herramientas en tus proyectos. Consulta la documentación para empezar y lleva tus ideas al siguiente nivel. 📖✨</span>
+            <button onclick="window.location.href='https://eliasar-yt-api.vercel.app/'">Ir</button>
+        </div>
+ </div>
+<div class="alert">
+  <img src="https://github.com/Eliasar54.png" alt="Logo EliasarYT" style="width: 40px; height: 40px; margin-right: 10px; border-radius: 50%;">
+  <span>
+    EliasarYT: ¡Puedes acceder en estas tarjetas! 🚀✨
+    Encontrarás hosting potente y mi canal de WhatsApp. 📱
+  </span>
+</div>
+<div class="cards">
+  <div class="card usage" style="background: linear-gradient(to right, #6a0dad, #0000ff);" onclick="window.location.href='https://dash.skyultraplus.com';">
+    <div>
+      <div class="title">Sky Ultra Plus</div>
     </div>
-
-    <footer>©EliasarYT</footer>
-
-    <script>
-        function hcaptchaCallback() {
-            document.getElementById('hcaptcha-container').style.display = 'none';
-            document.getElementById('content').style.display = 'block';
-        }
-    </script>
-
+    <div class="icon"><i class="fas fa-skiing"></i></div>
+  </div>
+  <div class="card usage" style="background: linear-gradient(to right, #28a745, #ff6347);" onclick="window.location.href='https://whatsapp.com/channel/0029VadxAUkKLaHjPfS1vP36';">
+    <div>
+      <div class="title">Canal de WhatsApp</div>
+    </div>
+    <div class="icon"><i class="fab fa-whatsapp"></i></div>
+  </div>
+</div>
+    </main>
+    <footer>
+        <p>Desarrollado por EliasarYT 🔥</p>
+    </footer>
 </body>
 </html>
