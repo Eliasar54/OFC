@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contador de Solicitudes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      font-size: 2em;
+    }
+    .counter {
+      font-size: 3em;
+      color: #3498db;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Total de Solicitudes</h1>
+  <div class="counter" id="counter">0</div>
+  <p>Esta página cuenta cuántas veces se ha cargado en tu navegador.</p>
+  <script>
+    // Obtiene el contador actual de localStorage
+    let count = localStorage.getItem('requestCount') || 0;
+
+    // Incrementa el contador
+    count++;
+
+    // Guarda el nuevo valor en localStorage
+    localStorage.setItem('requestCount', count);
+
+    // Muestra el contador en la página
+    document.getElementById('counter').textContent = count;
+  </script>
+</body>
+</html>
