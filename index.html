@@ -1,303 +1,87 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EliasarYT-SITE</title>
+<title>Portafolio - EliasarYT</title>
 <link rel="icon" href="https://github.com/Eliasar54.png" type="image/png">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
-* {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-font-family: 'Poppins', sans-serif;
-scroll-behavior: smooth;
-}
-body {
-background-color: #ffffff;
-color: #000000;
-overflow-x: hidden;
-animation: fadeInPage 1.5s ease-in-out;
-}
-@keyframes fadeInPage {
-from { opacity: 0; }
-to { opacity: 1; }
-}
-.navbar {
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 15px 30px;
-background: #ffffff;
-position: fixed;
-width: 100%;
-top: 0;
-z-index: 1000;
-box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-transition: transform 0.3s;
-}
-.navbar.hidden {
-transform: translateY(-100%);
-}
-.nav-links {
-display: flex;
-gap: 20px;
-}
-.nav-link {
-color: #000000;
-text-decoration: none;
-font-size: 1rem;
-transition: color 0.3s;
-}
-.nav-link:hover {
-color: #00A3FF;
-}
-.hero {
-height: 100vh;
-display: flex;
-align-items: center;
-justify-content: center;
-text-align: center;
-background: linear-gradient(to bottom, #ffffff, #f0f0f0);
-flex-direction: column;
-gap: 20px;
-padding: 0 20px;
-position: relative;
-}
-.hero .hero-content {
-animation: slideUp 1s forwards;
-opacity: 0;
-}
-.hero h1 {
-font-size: 3rem;
-font-weight: 600;
-color: #00A3FF;
-}
-.hero p {
-font-size: 1.2rem;
-margin-top: 10px;
-color: #333333;
-}
-.btn {
-display: inline-block;
-padding: 12px 25px;
-background: #00A3FF;
-color: #ffffff;
-text-decoration: none;
-border-radius: 5px;
-font-size: 1.2rem;
-transition: background 0.3s;
-}
-.btn:hover {
-background: #0088CC;
-}
-.hero-img {
-width: 400px;
-max-width: 90%;
-border-radius: 10px;
-opacity: 0;
-animation: fadeIn 2s forwards;
-animation-delay: 1s;
-}
-.about {
-padding: 100px 20px 80px;
-text-align: center;
-background-color: #ffffff;
-opacity: 0;
-transform: translateY(50px);
-transition: opacity 1s, transform 1s;
-}
-.about.show {
-opacity: 1;
-transform: translateY(0);
-}
-.about h2 {
-font-size: 2.5rem;
-margin-bottom: 20px;
-color: #00A3FF;
-}
-.about p {
-font-size: 1.1rem;
-margin-bottom: 20px;
-color: #333333;
-}
-.skills {
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-gap: 20px;
-margin-top: 30px;
-}
-.skill {
-background: #f7f7f7;
-padding: 20px;
-border-radius: 10px;
-text-align: center;
-width: 150px;
-transition: transform 0.3s, background 0.3s;
-opacity: 0;
-transform: translateY(50px);
-cursor: pointer;
-}
-.skill.show {
-opacity: 1;
-transform: translateY(0);
-}
-.skill:hover {
-background: #e0f7ff;
-transform: scale(1.05);
-}
-.skill i {
-font-size: 2.5rem;
-color: #00A3FF;
-margin-bottom: 10px;
-animation: popIn 0.8s ease forwards;
-}
-.skill h3 {
-font-size: 1rem;
-margin-top: 5px;
-color: #333333;
-}
-.extra-text {
-font-size: 1rem;
-margin-top: 20px;
-opacity: 0;
-transform: translateY(30px);
-transition: opacity 1s, transform 1s;
-color: #555555;
-}
-.extra-text.show {
-opacity: 1;
-transform: translateY(0);
-}
-.projects {
-padding: 80px 20px;
-text-align: center;
-background-color: #f9f9f9;
-opacity: 0;
-transform: translateY(50px);
-transition: opacity 1s, transform 1s;
-}
-.projects.show {
-opacity: 1;
-transform: translateY(0);
-}
-.projects h2 {
-font-size: 2.5rem;
-margin-bottom: 40px;
-color: #00A3FF;
-}
-.project-container {
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-gap: 30px;
-}
-.project {
-background: #ffffff;
-padding: 20px;
-border-radius: 10px;
-width: 300px;
-box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-transition: transform 0.3s;
-opacity: 0;
-transform: translateY(50px);
-}
-.project.show {
-opacity: 1;
-transform: translateY(0);
-}
-.project:hover {
-transform: scale(1.05);
-box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-.project img {
-width: 100%;
-border-radius: 5px;
-margin-bottom: 15px;
-animation: zoomIn 1s forwards;
-}
-.project h3 {
-font-size: 1.5rem;
-color: #00A3FF;
-margin-bottom: 10px;
-}
-.project p {
-font-size: 1rem;
-color: #333333;
-margin-bottom: 10px;
-}
-.project-icons {
-font-size: 1.5rem;
-color: #00A3FF;
-display: flex;
-justify-content: center;
-gap: 15px;
-}
-.footer {
-background: #ffffff;
-padding: 20px;
-text-align: center;
-margin-top: 50px;
-font-size: 0.9rem;
-color: #555555;
-border-top: 1px solid #e0e0e0;
-}
-.footer .social-icons {
-display: flex;
-justify-content: center;
-gap: 20px;
-margin-top: 10px;
-}
-.footer .social-icons a {
-color: #555555;
-font-size: 1.5rem;
-transition: color 0.3s, transform 0.2s;
-}
-.footer .social-icons a:hover {
-color: #00A3FF;
-transform: scale(1.2);
-}
-@keyframes fadeIn {
-from { opacity: 0; }
-to { opacity: 1; }
-}
-@keyframes slideUp {
-from { transform: translateY(50px); opacity: 0; }
-to { transform: translateY(0); opacity: 1; }
-}
-@keyframes zoomIn {
-from { transform: scale(0.8); opacity: 0; }
-to { transform: scale(1); opacity: 1; }
-}
-@keyframes popIn {
-from { transform: scale(0.5); opacity: 0; }
-to { transform: scale(1); opacity: 1; }
-}
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+body { margin: 0; background: linear-gradient(135deg, #2D0B80, #6610F2); color: #fff; overflow-x: hidden; animation: fadeInPage 1.5s ease-in-out; position: relative; }
+@keyframes fadeInPage { from { opacity: 0; } to { opacity: 1; } }
+.navbar { display: flex; justify-content: space-between; align-items: center; padding: 15px 30px; background: transparent; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.1); transition: transform 0.3s; }
+.navbar.hidden { transform: translateY(-100%); }
+.nav-links { display: flex; gap: 20px; }
+.nav-link { color: #fff; text-decoration: none; font-size: 1rem; transition: color 0.3s; }
+.nav-link:hover { color: #00A3FF; }
+.hero { height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; background: none; flex-direction: column; gap: 20px; padding: 0 20px; position: relative; }
+.hero .hero-content { animation: slideUp 1s forwards; opacity: 0; }
+.hero h1 { font-size: 3rem; font-weight: 600; color: #00A3FF; }
+.hero p { font-size: 1.2rem; margin-top: 10px; color: #ddd; }
+.btn { display: inline-block; padding: 12px 25px; background: #00A3FF; color: #fff; text-decoration: none; border-radius: 5px; font-size: 1.2rem; transition: background 0.3s; }
+.btn:hover { background: #0088CC; }
+.hero-img { width: 400px; max-width: 90%; border-radius: 10px; opacity: 0; animation: fadeIn 2s forwards; animation-delay: 1s; }
+.about { padding: 100px 20px 80px; text-align: center; background-color: transparent; opacity: 0; transform: translateY(50px); transition: opacity 1s, transform 1s; }
+.about.show { opacity: 1; transform: translateY(0); }
+.about h2 { font-size: 2.5rem; margin-bottom: 20px; color: #00A3FF; }
+.about p { font-size: 1.1rem; margin-bottom: 20px; color: #ddd; }
+.skills { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 30px; }
+.skill { background: rgba(0,0,0,0.2); padding: 20px; border-radius: 10px; text-align: center; width: 150px; transition: transform 0.3s, background 0.3s; opacity: 0; transform: translateY(50px); cursor: pointer; }
+.skill.show { opacity: 1; transform: translateY(0); }
+.skill:hover { background: rgba(0,0,0,0.3); transform: scale(1.05); }
+.skill i { font-size: 2.5rem; color: #00A3FF; margin-bottom: 10px; animation: popIn 0.8s ease forwards; }
+.skill h3 { font-size: 1rem; margin-top: 5px; color: #fff; }
+.extra-text { font-size: 1rem; margin-top: 20px; opacity: 0; transform: translateY(30px); transition: opacity 1s, transform 1s; color: #ccc; }
+.extra-text.show { opacity: 1; transform: translateY(0); }
+.projects { padding: 80px 20px; text-align: center; background-color: transparent; opacity: 0; transform: translateY(50px); transition: opacity 1s, transform 1s; }
+.projects.show { opacity: 1; transform: translateY(0); }
+.projects h2 { font-size: 2.5rem; margin-bottom: 40px; color: #00A3FF; }
+.project-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
+.project { background: rgba(0,0,0,0.2); padding: 20px; border-radius: 10px; width: 300px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); transition: transform 0.3s; opacity: 0; transform: translateY(50px); }
+.project.show { opacity: 1; transform: translateY(0); }
+.project:hover { transform: scale(1.05); box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+.project img { width: 100%; border-radius: 5px; margin-bottom: 15px; animation: zoomIn 1s forwards; }
+.project h3 { font-size: 1.5rem; color: #00A3FF; margin-bottom: 10px; }
+.project p { font-size: 1rem; color: #ddd; margin-bottom: 10px; }
+.project-icons { font-size: 1.5rem; color: #00A3FF; display: flex; justify-content: center; gap: 15px; }
+.footer { background: transparent; padding: 20px; text-align: center; margin-top: 50px; font-size: 0.9rem; color: #ccc; }
+.footer .social-icons { display: flex; justify-content: center; gap: 20px; margin-top: 10px; }
+.footer .social-icons a { color: #ccc; font-size: 1.5rem; transition: color 0.3s, transform 0.2s; }
+.footer .social-icons a:hover { color: #00A3FF; transform: scale(1.2); }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideUp { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+@keyframes zoomIn { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+@keyframes popIn { from { transform: scale(0.5); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+.background-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: -1; }
+.background-container .wave { position: absolute; bottom: 0; width: 100%; height: 40%; background: linear-gradient(180deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%); clip-path: ellipse(80% 100% at 50% 100%); }
+.background-container .circle { position: absolute; border-radius: 50%; background: linear-gradient(135deg, #ffffffaa, #ddddff); }
+.background-container .circle:nth-child(1) { width: 60px; height: 60px; top: 10%; right: 10%; }
+.background-container .circle:nth-child(2) { width: 30px; height: 30px; bottom: 40%; left: 15%; }
+.background-container .circle:nth-child(3) { width: 20px; height: 20px; bottom: 10%; right: 40%; }
+.background-container .circle:nth-child(4) { width: 15px; height: 15px; top: 20%; left: 25%; }
+.background-container .circle:nth-child(5) { width: 10px; height: 10px; bottom: 20%; left: 50%; }
+.background-container .circle:nth-child(6) { width: 25px; height: 25px; top: 50%; right: 30%; }
+.background-container .circle:nth-child(7) { width: 12px; height: 12px; bottom: 5%; left: 70%; }
+.background-container .circle:nth-child(8) { width: 18px; height: 18px; top: 70%; right: 10%; }
 @media (max-width: 768px) {
-.skills {
-flex-direction: column;
-align-items: center;
-}
-.project-container {
-flex-direction: column;
-align-items: center;
-}
-.navbar {
-flex-direction: column;
-}
-.nav-links {
-margin-top: 10px;
-}
-.hero h1 {
-font-size: 2.5rem;
-}
+.skills { flex-direction: column; align-items: center; }
+.project-container { flex-direction: column; align-items: center; }
+.navbar { flex-direction: column; }
+.nav-links { margin-top: 10px; }
+.hero h1 { font-size: 2.5rem; }
 }
 </style>
 </head>
 <body>
+<div class="background-container">
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="wave"></div>
+</div>
 <nav class="navbar">
 <h1>EliasarYT</h1>
 <div class="nav-links">
@@ -386,9 +170,7 @@ document.querySelector('.navbar').classList.toggle('hidden', currentScroll > las
 lastScroll = currentScroll;
 document.querySelectorAll('.hero, .about, .skill, .extra-text, .projects, .project').forEach(el => {
 let rect = el.getBoundingClientRect();
-if (rect.top < window.innerHeight - 100) {
-el.classList.add('show');
-}
+if (rect.top < window.innerHeight - 100) { el.classList.add('show'); }
 });
 });
 </script>
